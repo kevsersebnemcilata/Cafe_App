@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\CafeApp",
+    "\\CafeApp\\Areas",
+    "\\CafeApp\\Areas\\Identity",
+    "\\CafeApp\\Models",
+    "\\CafeApp\\Views",
+    "\\CafeApp\\Views\\Shared"
+  ],
+  "PreviewInSolutionExplorer": false
+}

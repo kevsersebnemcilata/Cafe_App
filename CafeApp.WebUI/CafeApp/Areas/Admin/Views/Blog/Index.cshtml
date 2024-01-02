@@ -1,0 +1,68 @@
+﻿@model IEnumerable<CafeApp.Models.Blog>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Resim
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Onay
+            </th>
+            <th>
+                Mesaj
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @if (item.Image == null)
+                    {
+                        <img src="~/Site/images/no-image.png" width="100" height="80" />
+                    }
+                    else
+                    {
+                        <img src="@item.Image" width="100" height="80" />
+                    }
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+
+                <td>
+                    @if (item.Onay)
+                    {
+                        <button class="btn btn-success btn-sm"><i class="bi bi-check-circle"></i> Evet</button>
+                    }
+                    else
+                    {
+                        <button class="btn btn-danger btn-sm"><i class="bi bi-x-circle"></i> Hayır</button>
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mesaj)
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success"><i class="bi bi-pencil"></i> Onayla</a>
+
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger"><i class="bi bi-trash"></i> Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

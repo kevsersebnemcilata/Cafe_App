@@ -1,0 +1,202 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Page Title</title>
+
+    <!-- Ek CSS stilleri -->
+    <style>
+        #account {
+            background-color: #f4f4f4; /* Arka plan rengi */
+            padding: 20px; /* İsteğe bağlı: içeriği kenarlardan uzaklaştırmak için */
+            border-radius: 10px; /* İsteğe bağlı: kenar yuvarlatma */
+            max-width: 400px; /* İsteğe bağlı: formun maksimum genişliği */
+            margin: 0 auto; /* İsteğe bağlı: formu ortalamak için */
+        }
+
+            /* İsteğe bağlı: form elemanlarına özel stiller eklemek için */
+            #account input[type="text"],
+            #account input[type="password"] {
+                margin-bottom: 10px;
+            }
+
+            /* İsteğe bağlı: Giriş butonu için özel stil */
+            #account button {
+                background-color: #007bff; /* Mavi renk örneği */
+                color: white;
+                /* Diğer stil özelliklerini isteğe bağlı olarak ekleyebilirsiniz */
+            }
+
+        /* İsteğe bağlı: Şifremi Unuttum bağlantısı için özel stil */
+        #forgot-password {
+            color: #28a745; /* Yeşil renk örneği */
+            /* Diğer stil özelliklerini isteğe bağlı olarak ekleyebilirsiniz */
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div class="row">
+            <div class="col-md-4">
+                <section id="account">
+                    <form id="account-form" method="post">
+                        <h4>Giriş Formu</h4>
+                        <hr />
+
+                        <div asp-validation-summary="All" class="text-danger"></div>
+
+                        <div class="form-group">
+                            Email
+                            <input asp-for="Input.Email" class="form-control" />
+                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            Şifre
+                            <input asp-for="Input.Password" class="form-control" />
+                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label asp-for="Input.RememberMe">
+                                    <input asp-for="Input.RememberMe" />
+                                    @Html.DisplayNameFor(m => m.Input.RememberMe)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Giriş</button>
+                        </div>
+                        <div class="form-group">
+                            <p>
+                                <a id="forgot-password" asp-page="./ForgotPassword">Şifremi Unuttum</a>
+                            </p>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </center>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive@3.2.12/dist/jquery.validate.unobtrusive.min.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@* <center>
+
+    <div class="row">
+    <div class="col-md-4">
+        <section>
+            <form id="account" method="post">
+                <h4>Giriş Formu</h4>
+                <hr />
+                    
+                <div asp-validation-summary="All" class="text-danger"></div>
+                  
+                <div class="form-group">
+                    Email
+                    <input asp-for="Input.Email" class="form-control" />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                 
+                <div class="form-group">
+                    Şifre
+                    <input asp-for="Input.Password" class="form-control" />
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label asp-for="Input.RememberMe">
+                            <input asp-for="Input.RememberMe" />
+                            @Html.DisplayNameFor(m => m.Input.RememberMe)
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Giriş</button>
+                </div>
+                <div class="form-group">
+                    <p>
+                        <a id="forgot-password" asp-page="./ForgotPassword">Şifremi Unuttum</a>
+                    </p>
+                    
+                </div>
+            </form>
+        </section>
+    </div>
+  
+</div>
+</center>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+ *@
